@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.17.11-patch.1",
+    "@fastify/elasticsearch": "^3.1.0",
+    "fastify": "^4.19.2"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
