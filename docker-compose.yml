@@ -1,0 +1,19 @@
+services:
+  web:
+    build: ./Web
+    ports:
+      - 5173:5173
+    depends_on:
+      - nodejsapp
+
+  nodejsapp:
+    build: ./NodejsApp
+    depends_on:
+      - elasticsearch
+
+  elasticsearch:
+    image: "elasticsearch:7.17.10"
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms500m -Xmx500m"
